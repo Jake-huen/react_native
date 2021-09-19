@@ -4,7 +4,7 @@ import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import Login from './Login';
 import SignUp from './SignUp';
-import Tab from './Tab';
+import Main from './Main';
 
 const App = createStackNavigator(
   {
@@ -14,8 +14,8 @@ const App = createStackNavigator(
     SignUp: {
       screen: SignUp,
     },
-    Tab: {
-      screen: Tab,
+    Main: {
+      screen: Main,
     },
   },
   {
@@ -24,8 +24,6 @@ const App = createStackNavigator(
 );
 
 const AppContainer = createAppContainer(App);
-
-export default () => <AppContainer />;
 const styles = StyleSheet.create({
   centerView: {
     flex: 1,
@@ -33,3 +31,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+export default () => <AppContainer />;

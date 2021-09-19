@@ -11,8 +11,8 @@ class SignUp extends Component {
           onPress={() => this.props.navigation.navigate('Login')}
         />
         <Button
-          title="Go to Tab Page"
-          onPress={() => this.props.navigation.navigate('Tab')}
+          title="Go to Main Page"
+          onPress={() => this.props.navigation.navigate('Main')}
         />
       </View>
     );
