@@ -4,31 +4,36 @@ import {createAppContainer} from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import Home from './Home';
 import Feed from './Feed';
-const TabNavigator = createBottomTabNavigator({
-  Home: {
-    screen: Home,
+import Ionicons from 'react-native-vector-icons/Ionicons.js';
+const TabNavigator = createBottomTabNavigator(
+  {
+    Home: {
+      screen: Home,
+    },
+    Feed: {
+      screen: Feed,
+    },
   },
-  Feed: {
-    screen: Feed,
+  {
+    defaultNavigationOptions: ({navigation}) => ({
+      tabBarIcon: ({horizontal, tintColor}) => {
+        const {routeName} = navigation.state;
+        let iconName;
+        if (routeName === 'Home') {
+          iconName = 'ios-home';
+        } else if (routeName === 'Feed') {
+          iconName = 'ios-chatboxes';
+        }
+        return (
+          <Ionicons
+            name={iconName}
+            size={horizontal ? 20 : 25}
+            color={tintColor}
+          />
+        );
+      },
+    }),
   },
-});
-
-// class Main extends Component {
-//   render() {
-//     return (
-//       <View style={styles.eachView}>
-//         <Text>This is Main</Text>
-//         <Button
-//           title="Go to Login Page"
-//           onPress={() => this.props.navigation.navigate('Login')}
-//         />
-//         <Button
-//           title="Go to SignUp Page"
-//           onPress={() => this.props.navigation.navigate('SignUp')}
-//         />
-//       </View>
-//     );
-//   }
-// }
+);
 
 export default createAppContainer(TabNavigator);
