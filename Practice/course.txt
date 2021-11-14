@@ -1,0 +1,24 @@
+ctrl + M 으로 디버그 모드할 수 있다.
+
+기본 Concepts
+1. View -> grouping 할 때 사용
+- safeAreaView는 padding같은거 줘서 화면에 보이도록 자동으로 해줌.
+2. Text -> 텍스트 적을 때 사용
+- props 종류
+    - numberOfLines ={1} : 엄청 긴줄도 한줄로 보여주기
+    - onPress={()=>{}} : 누르면 실행됨.
+        - 위에 const로 함수 정의해주고 onPress={함수이름}해줘도 됨.
+// Document 읽으면서 해결(나머지)
+3. Image 
+    - source={require("위치정보")} 사용하기 -> render local image
+    - network image는 source={{ uri: "sdflksajdflk"}} 사용
+    - width, height 로 크기 조절 (source안에 넣기 가능)
+-props
+    - blurRadius
+    - loadingIndicatorSource 
+    - resizeMode -> cover, contain, stretch, repeat...
+4. Touchables
+- TouchableHighLight
+- TouchableOpacity
+- TouchWithoutFeedback
+- TouchableNativeFeedback
